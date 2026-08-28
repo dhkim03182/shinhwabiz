@@ -6,7 +6,10 @@ fetch("/shinhwabiz/header.html")
     .then(response => {
 
         if (!response.ok) {
-            throw new Error("헤더를 불러오지 못했습니다.");
+            throw new Error(
+                "헤더를 불러오지 못했습니다. 상태 코드: "
+                + response.status
+            );
         }
 
         return response.text();
@@ -18,6 +21,10 @@ fetch("/shinhwabiz/header.html")
             document.getElementById("header-container");
 
         if (!headerContainer) {
+            console.error(
+                "header-container를 찾을 수 없습니다."
+            );
+
             return;
         }
 
@@ -49,42 +56,51 @@ function initMobileMenu() {
     const nav =
         document.getElementById("main-nav");
 
+
     if (!menuButton || !nav) {
+        console.error(
+            "모바일 메뉴 요소를 찾을 수 없습니다."
+        );
+
         return;
     }
 
 
-    /* -----------------------------------------
+    /* =========================================
        햄버거 버튼
-    ----------------------------------------- */
+    ========================================== */
 
-    menuButton.addEventListener("click", function () {
+    menuButton.addEventListener(
+        "click",
+        function () {
 
-        const isOpen =
-            nav.classList.toggle("mobile-open");
+            const isOpen =
+                nav.classList.toggle("mobile-open");
 
-        menuButton.classList.toggle(
-            "active",
-            isOpen
-        );
+            menuButton.classList.toggle(
+                "active",
+                isOpen
+            );
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            isOpen
-        );
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
 
-        menuButton.setAttribute(
-            "aria-label",
-            isOpen ? "메뉴 닫기" : "메뉴 열기"
-        );
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "메뉴 닫기"
+                    : "메뉴 열기"
+            );
 
-    });
+        }
+    );
 
 
-
-    /* -----------------------------------------
+    /* =========================================
        모바일 메인 메뉴
-    ----------------------------------------- */
+    ========================================== */
 
     const mainMenuItems =
         nav.querySelectorAll(":scope > ul > li");
@@ -93,10 +109,14 @@ function initMobileMenu() {
     mainMenuItems.forEach(function (item) {
 
         const mainLink =
-            item.querySelector(":scope > .main-menu-link");
+            item.querySelector(
+                ":scope > .main-menu-link"
+            );
 
         const submenu =
-            item.querySelector(":scope > .submenu");
+            item.querySelector(
+                ":scope > .submenu"
+            );
 
 
         if (!mainLink || !submenu) {
@@ -108,9 +128,7 @@ function initMobileMenu() {
             "click",
             function (event) {
 
-                if (
-                    window.innerWidth <= 768
-                ) {
+                if (window.innerWidth <= 768) {
 
                     event.preventDefault();
 
@@ -120,8 +138,6 @@ function initMobileMenu() {
                             "submenu-open"
                         );
 
-
-                    /* 다른 메뉴 닫기 */
 
                     mainMenuItems.forEach(
                         function (otherItem) {
@@ -133,8 +149,6 @@ function initMobileMenu() {
                         }
                     );
 
-
-                    /* 현재 메뉴 열기 */
 
                     if (!isOpen) {
 
@@ -152,10 +166,9 @@ function initMobileMenu() {
     });
 
 
-
-    /* -----------------------------------------
-       서브메뉴 링크 클릭
-    ----------------------------------------- */
+    /* =========================================
+       서브메뉴 클릭
+    ========================================== */
 
     const submenuLinks =
         nav.querySelectorAll(".submenu a");
@@ -167,27 +180,9 @@ function initMobileMenu() {
             "click",
             function () {
 
-                if (
-                    window.innerWidth <= 768
-                ) {
+                if (window.innerWidth <= 768) {
 
-                    nav.classList.remove(
-                        "mobile-open"
-                    );
-
-                    menuButton.classList.remove(
-                        "active"
-                    );
-
-                    menuButton.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuButton.setAttribute(
-                        "aria-label",
-                        "메뉴 열기"
-                    );
+                    closeMobileMenu();
 
                 }
 
@@ -197,10 +192,9 @@ function initMobileMenu() {
     });
 
 
-
-    /* -----------------------------------------
-       바깥 영역 클릭
-    ----------------------------------------- */
+    /* =========================================
+       바깥 클릭
+    ========================================== */
 
     document.addEventListener(
         "click",
@@ -221,18 +215,15 @@ function initMobileMenu() {
     );
 
 
-
-    /* -----------------------------------------
+    /* =========================================
        화면 크기 변경
-    ----------------------------------------- */
+    ========================================== */
 
     window.addEventListener(
         "resize",
         function () {
 
-            if (
-                window.innerWidth > 768
-            ) {
+            if (window.innerWidth > 768) {
 
                 closeMobileMenu();
 
@@ -241,6 +232,10 @@ function initMobileMenu() {
         }
     );
 
+
+    /* =========================================
+       메뉴 닫기
+    ========================================== */
 
     function closeMobileMenu() {
 
