@@ -2,7 +2,7 @@
    HEADER 불러오기
 ========================================= */
 
-fetch("./header.html")
+fetch("/shinhwabiz/include/header.html")
     .then(response => {
 
         if (!response.ok) {
