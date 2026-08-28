@@ -10,6 +10,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
     color: #222;
     background-color: #f5f7fa;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 a {
@@ -26,6 +28,11 @@ a {
 
 ul {
     list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -61,11 +68,13 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .logo img {
     width: auto;
     height: 55px;
+    max-width: 100%;
 
     transition: 0.2s;
 }
@@ -146,6 +155,7 @@ nav > ul > li:hover::after {
     left: 50%;
 
     width: 180px;
+    max-width: calc(100vw - 30px);
 
     background-color: #ffffff;
 
@@ -224,6 +234,8 @@ nav > ul > li:hover .submenu {
     position: relative;
     z-index: 2;
 
+    width: min(90%, 900px);
+
     animation: bannerText 1s ease;
 }
 
@@ -234,11 +246,15 @@ nav > ul > li:hover .submenu {
     letter-spacing: -2px;
 
     margin-bottom: 10px;
+
+    word-break: keep-all;
 }
 
 .banner-text p {
     font-size: 20px;
     color: rgba(255, 255, 255, 0.9);
+
+    word-break: keep-all;
 }
 
 
@@ -274,7 +290,10 @@ nav > ul > li:hover .submenu {
 }
 
 .icon {
+    min-width: 0;
     height: 130px;
+
+    padding: 15px;
 
     background-color: #ffffff;
 
@@ -283,6 +302,8 @@ nav > ul > li:hover .submenu {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    text-align: center;
 
     font-size: 18px;
     font-weight: 600;
@@ -402,6 +423,8 @@ nav > ul > li:hover .submenu {
     font-size: 15px;
 
     margin-top: 10px;
+
+    word-break: keep-all;
 }
 
 
@@ -413,6 +436,8 @@ nav > ul > li:hover .submenu {
     margin-top: 15px;
 
     line-height: 1.8;
+
+    word-break: keep-all;
 }
 
 .contact-info strong {
@@ -491,7 +516,7 @@ footer > div {
 
 
 /* =========================================
-   반응형
+   반응형 - 태블릿
 ========================================= */
 
 @media (max-width: 1250px) {
@@ -507,62 +532,217 @@ footer > div {
 }
 
 
+/* =========================================
+   반응형 - 모바일
+========================================= */
+
 @media (max-width: 768px) {
+
+    /* -------------------------
+       공통
+    ------------------------- */
+
+    .top,
+    .shortcut,
+    .board,
+    footer > div {
+        width: calc(100% - 32px);
+    }
+
+
+    /* -------------------------
+       Header
+       
+       ※ 헤더 구조 개편은 2단계에서 진행
+    ------------------------- */
 
     header {
         height: auto;
     }
 
     .top {
-        flex-direction: column;
+        padding: 15px 0;
+        gap: 12px;
+    }
 
-        padding: 20px 0;
-
-        gap: 15px;
+    .logo img {
+        height: 45px;
     }
 
     nav > ul {
         flex-wrap: wrap;
-
         justify-content: center;
     }
 
     nav > ul > li {
-        height: 45px;
+        height: 42px;
 
-        padding: 0 10px;
+        padding: 0 8px;
+
+        font-size: 13px;
+    }
+
+    .submenu {
+        top: 42px;
+    }
+
+
+    /* -------------------------
+       Banner
+    ------------------------- */
+
+    .banner {
+        height: 300px;
+        min-height: 260px;
+    }
+
+    .banner-text {
+        width: calc(100% - 32px);
+    }
+
+    .banner-text h1 {
+        font-size: clamp(28px, 8vw, 35px);
+        letter-spacing: -1.5px;
+
+        margin-bottom: 8px;
+    }
+
+    .banner-text p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+
+    /* -------------------------
+       바로가기
+    ------------------------- */
+
+    .shortcut {
+        margin: 40px auto;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .icon {
+        height: 105px;
+
+        padding: 12px;
+
+        border-radius: 10px;
+
+        font-size: 15px;
+    }
+
+
+    /* -------------------------
+       게시판
+    ------------------------- */
+
+    .board {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-bottom: 45px;
+    }
+
+    .box {
+        min-height: 0;
+
+        padding: 22px 18px;
+
+        border-radius: 10px;
+    }
+
+    .box h2 {
+        font-size: 18px;
+
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+    .box ul li {
+        padding: 8px 0;
+
+        font-size: 13px;
+    }
+
+    .box p {
+        font-size: 14px;
+    }
+
+
+    /* -------------------------
+       문의 버튼
+    ------------------------- */
+
+    .consult-btn {
+        height: 46px;
+
+        margin-top: 18px;
 
         font-size: 14px;
     }
 
-    .submenu {
-        top: 45px;
-    }
 
-    .banner {
-        height: 300px;
-    }
+    /* -------------------------
+       Footer
+    ------------------------- */
 
-    .banner-text h1 {
-        font-size: 35px;
-    }
+    footer {
+        padding: 35px 0;
 
-    .banner-text p {
-        font-size: 16px;
-    }
-
-    .shortcut {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        margin: 40px auto;
-    }
-
-    .board {
-        grid-template-columns: 1fr;
+        font-size: 12px;
     }
 
     footer > div {
-        width: 90%;
+        width: calc(100% - 32px);
+    }
+
+}
+
+
+/* =========================================
+   작은 모바일
+========================================= */
+
+@media (max-width: 480px) {
+
+    .top,
+    .shortcut,
+    .board,
+    footer > div {
+        width: calc(100% - 24px);
+    }
+
+    .banner {
+        height: 260px;
+    }
+
+    .banner-text h1 {
+        font-size: 27px;
+    }
+
+    .banner-text p {
+        font-size: 14px;
+    }
+
+    .shortcut {
+        gap: 10px;
+
+        margin: 30px auto;
+    }
+
+    .icon {
+        height: 95px;
+
+        font-size: 14px;
+    }
+
+    .box {
+        padding: 20px 15px;
     }
 
 }
