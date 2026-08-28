@@ -1,3 +1,4 @@
+```css
 /* =========================================
    기본 설정
 ========================================= */
@@ -63,7 +64,9 @@ header {
 }
 
 
-/* 로고 */
+/* =========================================
+   LOGO
+========================================= */
 
 .logo {
     display: flex;
@@ -119,7 +122,9 @@ nav > ul > li:hover {
 }
 
 
-/* 메뉴 아래 파란색 선 */
+/* =========================================
+   메뉴 아래 파란색 선
+========================================= */
 
 nav > ul > li::after {
     content: "";
@@ -197,6 +202,42 @@ nav > ul > li:hover .submenu {
 .submenu li a:hover {
     background-color: #f1f5f9;
     color: #1d4f91;
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mobile-menu-btn {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 8px;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.mobile-menu-btn span {
+    display: block;
+
+    width: 24px;
+    height: 2px;
+
+    background-color: #333;
+
+    transition: 0.25s;
 }
 
 
@@ -349,7 +390,9 @@ nav > ul > li:hover .submenu {
 }
 
 
-/* 게시판 박스 */
+/* =========================================
+   게시판 박스
+========================================= */
 
 .box {
     min-width: 0;
@@ -377,7 +420,9 @@ nav > ul > li:hover .submenu {
 }
 
 
-/* 게시판 제목 */
+/* =========================================
+   게시판 제목
+========================================= */
 
 .box h2 {
     font-size: 20px;
@@ -392,7 +437,9 @@ nav > ul > li:hover .submenu {
 }
 
 
-/* 게시판 목록 */
+/* =========================================
+   게시판 목록
+========================================= */
 
 .box ul li {
     padding: 9px 0;
@@ -415,7 +462,9 @@ nav > ul > li:hover .submenu {
 }
 
 
-/* 게시판 설명 */
+/* =========================================
+   게시판 설명
+========================================= */
 
 .box p {
     color: #666;
@@ -538,177 +587,9 @@ footer > div {
 
 @media (max-width: 768px) {
 
-    /* -------------------------
-       공통
-    ------------------------- */
-
-    .top,
-    .shortcut,
-    .board,
-    footer > div {
-        width: calc(100% - 32px);
-    }
-
-
-    /* -------------------------
-       Header
-       
-       ※ 헤더 구조 개편은 2단계에서 진행
-    ------------------------- */
-
-    header {
-        height: auto;
-    }
-
-    .top {
-        padding: 15px 0;
-        gap: 12px;
-    }
-
-    .logo img {
-        height: 45px;
-    }
-
-    nav > ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav > ul > li {
-        height: 42px;
-
-        padding: 0 8px;
-
-        font-size: 13px;
-    }
-
-    .submenu {
-        top: 42px;
-    }
-
-
-    /* -------------------------
-       Banner
-    ------------------------- */
-
-    .banner {
-        height: 300px;
-        min-height: 260px;
-    }
-
-    .banner-text {
-        width: calc(100% - 32px);
-    }
-
-    .banner-text h1 {
-        font-size: clamp(28px, 8vw, 35px);
-        letter-spacing: -1.5px;
-
-        margin-bottom: 8px;
-    }
-
-    .banner-text p {
-        font-size: 15px;
-        line-height: 1.5;
-    }
-
-
-    /* -------------------------
-       바로가기
-    ------------------------- */
-
-    .shortcut {
-        margin: 40px auto;
-
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 12px;
-    }
-
-    .icon {
-        height: 105px;
-
-        padding: 12px;
-
-        border-radius: 10px;
-
-        font-size: 15px;
-    }
-
-
-    /* -------------------------
-       게시판
-    ------------------------- */
-
-    .board {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-
-        margin-bottom: 45px;
-    }
-
-    .box {
-        min-height: 0;
-
-        padding: 22px 18px;
-
-        border-radius: 10px;
-    }
-
-    .box h2 {
-        font-size: 18px;
-
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-    }
-
-    .box ul li {
-        padding: 8px 0;
-
-        font-size: 13px;
-    }
-
-    .box p {
-        font-size: 14px;
-    }
-
-
-    /* -------------------------
-       문의 버튼
-    ------------------------- */
-
-    .consult-btn {
-        height: 46px;
-
-        margin-top: 18px;
-
-        font-size: 14px;
-    }
-
-
-    /* -------------------------
-       Footer
-    ------------------------- */
-
-    footer {
-        padding: 35px 0;
-
-        font-size: 12px;
-    }
-
-    footer > div {
-        width: calc(100% - 32px);
-    }
-
-}
-
-
-/* =========================================
-   작은 모바일
-========================================= */
-
-@media (max-width: 480px) {
+    /* =====================================
+       공통 너비
+    ====================================== */
 
     .top,
     .shortcut,
@@ -717,84 +598,16 @@ footer > div {
         width: calc(100% - 24px);
     }
 
-    .banner {
-        height: 260px;
-    }
 
-    .banner-text h1 {
-        font-size: 27px;
-    }
-
-    .banner-text p {
-        font-size: 14px;
-    }
-
-    .shortcut {
-        gap: 10px;
-
-        margin: 30px auto;
-    }
-
-    .icon {
-        height: 95px;
-
-        font-size: 14px;
-    }
-
-    .box {
-        padding: 20px 15px;
-    }
-
-   ```css
-/* =========================================
-   2단계 모바일 헤더
-========================================= */
-
-.mobile-menu-btn {
-    display: none;
-
-    width: 44px;
-    height: 44px;
-
-    padding: 8px;
-
-    border: 0;
-    background: transparent;
-
-    cursor: pointer;
-
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    gap: 5px;
-}
-
-.mobile-menu-btn span {
-    display: block;
-
-    width: 24px;
-    height: 2px;
-
-    background-color: #333;
-
-    transition: 0.25s;
-}
-
-
-/* =========================================
-   모바일
-========================================= */
-
-@media (max-width: 768px) {
+    /* =====================================
+       HEADER
+    ====================================== */
 
     header {
         height: auto;
     }
 
     .top {
-        width: calc(100% - 24px);
-
         min-height: 65px;
 
         padding: 10px 0;
@@ -806,18 +619,18 @@ footer > div {
     }
 
 
-    /* -------------------------
-       로고
-    ------------------------- */
+    /* =====================================
+       LOGO
+    ====================================== */
 
     .logo img {
         height: 42px;
     }
 
 
-    /* -------------------------
-       햄버거 버튼
-    ------------------------- */
+    /* =====================================
+       MOBILE MENU BUTTON
+    ====================================== */
 
     .mobile-menu-btn {
         display: flex;
@@ -841,9 +654,9 @@ footer > div {
     }
 
 
-    /* -------------------------
-       Navigation
-    ------------------------- */
+    /* =====================================
+       MOBILE NAVIGATION
+    ====================================== */
 
     nav {
         display: none;
@@ -893,10 +706,16 @@ footer > div {
     }
 
 
+    /* PC용 파란색 하단선 제거 */
+
     nav > ul > li::after {
         display: none;
     }
 
+
+    /* =====================================
+       MAIN MENU
+    ====================================== */
 
     nav > ul > li > .main-menu-link {
         width: 100%;
@@ -910,9 +729,9 @@ footer > div {
     }
 
 
-    /* -------------------------
+    /* =====================================
        서브메뉴 화살표
-    ------------------------- */
+    ====================================== */
 
     nav > ul > li > .main-menu-link::after {
         content: "＋";
@@ -925,6 +744,8 @@ footer > div {
         transition: 0.2s;
     }
 
+
+    /* 서브메뉴가 열린 메인 메뉴 */
 
     nav > ul > li.submenu-open > .main-menu-link {
         color: #1d4f91;
@@ -940,9 +761,9 @@ footer > div {
     }
 
 
-    /* -------------------------
-       모바일 서브메뉴
-    ------------------------- */
+    /* =====================================
+       MOBILE SUB MENU
+    ====================================== */
 
     .submenu {
         position: static;
@@ -999,18 +820,142 @@ footer > div {
         padding-left: 32px;
     }
 
+
+    /* =====================================
+       BANNER
+    ====================================== */
+
+    .banner {
+        height: 300px;
+        min-height: 260px;
+    }
+
+    .banner-text {
+        width: calc(100% - 32px);
+    }
+
+    .banner-text h1 {
+        font-size: clamp(28px, 8vw, 35px);
+
+        letter-spacing: -1.5px;
+
+        margin-bottom: 8px;
+    }
+
+    .banner-text p {
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================
+       바로가기
+    ====================================== */
+
+    .shortcut {
+        margin: 40px auto;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .icon {
+        height: 105px;
+
+        padding: 12px;
+
+        border-radius: 10px;
+
+        font-size: 15px;
+    }
+
+
+    /* =====================================
+       게시판
+    ====================================== */
+
+    .board {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        margin-bottom: 45px;
+    }
+
+    .box {
+        min-height: 0;
+
+        padding: 22px 18px;
+
+        border-radius: 10px;
+    }
+
+    .box h2 {
+        font-size: 18px;
+
+        margin-bottom: 15px;
+
+        padding-bottom: 10px;
+    }
+
+    .box ul li {
+        padding: 8px 0;
+
+        font-size: 13px;
+    }
+
+    .box p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================
+       문의 버튼
+    ====================================== */
+
+    .consult-btn {
+        height: 46px;
+
+        margin-top: 18px;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================
+       FOOTER
+    ====================================== */
+
+    footer {
+        padding: 35px 0;
+
+        font-size: 12px;
+    }
+
 }
 
 
 /* =========================================
-   모바일
+   작은 모바일
 ========================================= */
 
 @media (max-width: 480px) {
 
-    .top {
+    .top,
+    .shortcut,
+    .board,
+    footer > div {
         width: calc(100% - 20px);
+    }
 
+
+    /* =====================================
+       HEADER
+    ====================================== */
+
+    .top {
         min-height: 60px;
     }
 
@@ -1022,6 +967,11 @@ footer > div {
         width: 42px;
         height: 42px;
     }
+
+
+    /* =====================================
+       모바일 메뉴
+    ====================================== */
 
     nav > ul > li > .main-menu-link {
         padding-left: 15px;
@@ -1036,7 +986,48 @@ footer > div {
         padding-left: 28px;
     }
 
-}
+
+    /* =====================================
+       BANNER
+    ====================================== */
+
+    .banner {
+        height: 260px;
+    }
+
+    .banner-text h1 {
+        font-size: 27px;
+    }
+
+    .banner-text p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================
+       바로가기
+    ====================================== */
+
+    .shortcut {
+        gap: 10px;
+
+        margin: 30px auto;
+    }
+
+    .icon {
+        height: 95px;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================
+       게시판
+    ====================================== */
+
+    .box {
+        padding: 20px 15px;
+    }
 
 }
 
@@ -1049,3 +1040,4 @@ footer > div {
     position: relative;
     z-index: 1000;
 }
+```
