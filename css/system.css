@@ -1,0 +1,411 @@
+/* =========================================
+   시스템인증 페이지
+========================================= */
+
+
+/* =========================================
+   CONTENT SECTION
+========================================= */
+
+.content-section {
+    margin-bottom: 55px;
+}
+
+.content-section h3 {
+    margin-bottom: 22px;
+
+    padding-left: 14px;
+
+    border-left: 4px solid #1d4f91;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #222;
+}
+
+.content-section p {
+    margin-bottom: 14px;
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    color: #555;
+}
+
+
+/* =========================================
+   주요 시스템인증
+========================================= */
+
+.certification-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+
+/* 인증 카드 */
+
+.certification-card {
+    display: block;
+
+    min-height: 230px;
+
+    padding: 28px 25px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e5e9ef;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.04);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+    text-decoration: none;
+}
+
+
+/* 카드 hover */
+
+.certification-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #1d4f91;
+
+    box-shadow:
+        0 10px 25px rgba(29, 79, 145, 0.12);
+}
+
+
+/* ISO 번호 */
+
+.certification-number {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    padding: 6px 11px;
+
+    border-radius: 4px;
+
+    background-color: #eef4fb;
+
+    color: #1d4f91;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* 카드 제목 */
+
+.certification-card h4 {
+    margin-bottom: 12px;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+/* 카드 설명 */
+
+.certification-card p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 1.75;
+
+    color: #666;
+}
+
+
+/* =========================================
+   인증 효과
+========================================= */
+
+.benefit-list {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+/* 효과 박스 */
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #e7ebf0;
+
+    border-radius: 8px;
+
+    transition: 0.25s;
+}
+
+
+/* 효과 박스 hover */
+
+.benefit-item:hover {
+    transform: translateY(-3px);
+
+    border-color: #d5dfeb;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* 번호 */
+
+.benefit-item > strong {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background-color: #1d4f91;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* 효과 제목 */
+
+.benefit-item h4 {
+    margin-bottom: 6px;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: #333;
+}
+
+
+/* 효과 설명 */
+
+.benefit-item p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #666;
+}
+
+
+/* =========================================
+   문의 배너
+========================================= */
+
+.inquiry-banner {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-top: 60px;
+
+    padding: 30px 35px;
+
+    border-radius: 10px;
+
+    background-color: #f1f5fa;
+
+    border: 1px solid #dfe7f0;
+}
+
+
+/* 문의 제목 */
+
+.inquiry-banner h3 {
+    margin: 0 0 7px;
+
+    padding: 0;
+
+    border: none;
+
+    font-size: 20px;
+
+    color: #1d4f91;
+}
+
+
+/* 문의 설명 */
+
+.inquiry-banner p {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: #666;
+}
+
+
+/* 문의 버튼 */
+
+.inquiry-banner a {
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 135px;
+    height: 46px;
+
+    padding: 0 20px;
+
+    border-radius: 6px;
+
+    background-color: #1d4f91;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.25s;
+}
+
+
+/* 문의 버튼 hover */
+
+.inquiry-banner a:hover {
+    background-color: #163d70;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(29, 79, 145, 0.2);
+}
+
+
+/* =========================================
+   반응형
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .certification-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefit-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .content-section {
+        margin-bottom: 40px;
+    }
+
+
+    .content-section h3 {
+        font-size: 19px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .content-section p {
+        font-size: 14px;
+    }
+
+
+    .certification-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    .certification-card {
+        min-height: auto;
+
+        padding: 23px 20px;
+    }
+
+
+    .certification-card h4 {
+        font-size: 17px;
+    }
+
+
+    .benefit-item {
+        padding: 20px;
+
+        gap: 14px;
+    }
+
+
+    .benefit-item h4 {
+        font-size: 16px;
+    }
+
+
+    .benefit-item p {
+        font-size: 13px;
+    }
+
+
+    .inquiry-banner {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+        padding: 25px;
+    }
+
+
+    .inquiry-banner a {
+        width: 100%;
+    }
+
+}
