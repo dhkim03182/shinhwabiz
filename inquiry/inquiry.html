@@ -110,7 +110,6 @@
         <form
             class="inquiry-form"
             id="inquiry-form"
-            onsubmit="return confirmInquiry();"
         >
 
 
@@ -183,6 +182,8 @@
 
                 <div class="email-input">
 
+                    <!-- 이메일 아이디 -->
+
                     <input
                         type="text"
                         id="email-id"
@@ -190,9 +191,13 @@
                         placeholder="이메일 아이디"
                     >
 
+
                     <span class="email-at">
                         @
                     </span>
+
+
+                    <!-- 이메일 도메인 -->
 
                     <select
                         id="email-domain"
@@ -236,6 +241,9 @@
                         </option>
 
                     </select>
+
+
+                    <!-- 직접입력 -->
 
                     <input
                         type="text"
@@ -295,7 +303,7 @@
 
 
 
-            <!-- 제목 -->
+            <!-- 문의 제목 -->
 
             <div class="form-row">
 
@@ -354,6 +362,7 @@
                     수집된 정보는 문의 상담 및 답변을 위한
                     목적으로만 이용됩니다.
                 </p>
+
 
                 <label class="privacy-check">
 
@@ -455,74 +464,13 @@
 <script src="../js/header.js"></script>
 <script src="../js/menu.js"></script>
 
-
-<script>
-
-/* =========================================
-   문의 제출 확인
-========================================= */
-
-function confirmInquiry() {
-
-    return confirm("정말로 보내시겠습니까?");
-
-}
-
-
-/* =========================================
-   이메일 도메인 직접입력
-========================================= */
-
-const emailDomain =
-    document.getElementById("email-domain");
-
-const customDomain =
-    document.getElementById("custom-domain");
-
-
-emailDomain.addEventListener("change", function () {
-
-    if (this.value === "direct") {
-
-        customDomain.style.display = "block";
-
-        customDomain.required = true;
-
-        customDomain.focus();
-
-    } else {
-
-        customDomain.style.display = "none";
-
-        customDomain.required = false;
-
-        customDomain.value = "";
-
-    }
-
-});
-
-
-/* =========================================
-   문의 폼 초기화
-========================================= */
-
-document.getElementById("inquiry-form").addEventListener("reset", function () {
-
-    setTimeout(function () {
-
-        customDomain.style.display = "none";
-
-        customDomain.required = false;
-
-    }, 0);
-
-});
-
+<!-- Firebase + 문의 기능 -->
+<script
+    type="module"
+    src="../js/inquiry.js">
 </script>
 
 
 </body>
 
 </html>
-```
