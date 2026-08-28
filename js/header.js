@@ -56,6 +56,9 @@ function initMobileMenu() {
         document.getElementById("main-nav");
 
     if (!menuButton || !nav) {
+        console.error(
+            "모바일 메뉴 버튼 또는 네비게이션을 찾을 수 없습니다."
+        );
         return;
     }
 
@@ -92,20 +95,16 @@ function initMobileMenu() {
     ====================================== */
 
     const mainMenuItems =
-        nav.querySelectorAll(":scope > ul > li");
+        nav.querySelectorAll("ul > li");
 
 
     mainMenuItems.forEach(function (item) {
 
         const mainLink =
-            item.querySelector(
-                ":scope > .main-menu-link"
-            );
+            item.querySelector(":scope > .main-menu-link");
 
         const submenu =
-            item.querySelector(
-                ":scope > .submenu"
-            );
+            item.querySelector(":scope > .submenu");
 
 
         if (!mainLink || !submenu) {
@@ -226,7 +225,7 @@ function initMobileMenu() {
 
 
     /* =====================================
-       메뉴 닫기
+       모바일 메뉴 닫기
     ====================================== */
 
     function closeMobileMenu() {
