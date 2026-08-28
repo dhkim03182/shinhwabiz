@@ -36,15 +36,18 @@ ul {
 header {
     width: 100%;
     height: 88px;
+
     background-color: #ffffff;
     border-bottom: 1px solid #e5e7eb;
+
     position: relative;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .top {
-    width: 1200px;
+    width: min(1200px, 90%);
     height: 100%;
+
     margin: 0 auto;
 
     display: flex;
@@ -63,6 +66,7 @@ header {
 .logo img {
     width: auto;
     height: 55px;
+
     transition: 0.2s;
 }
 
@@ -78,11 +82,13 @@ header {
 nav > ul {
     display: flex;
     height: 100%;
+
     align-items: center;
 }
 
 nav > ul > li {
     position: relative;
+
     height: 100%;
     padding: 0 27px;
 
@@ -93,6 +99,7 @@ nav > ul > li {
     font-weight: 600;
 
     color: #333;
+
     cursor: pointer;
 
     transition: 0.25s;
@@ -109,6 +116,7 @@ nav > ul > li::after {
     content: "";
 
     position: absolute;
+
     left: 50%;
     bottom: 0;
 
@@ -118,6 +126,7 @@ nav > ul > li::after {
     background-color: #1d4f91;
 
     transform: translateX(-50%);
+
     transition: 0.25s;
 }
 
@@ -142,7 +151,8 @@ nav > ul > li:hover::after {
 
     border: 1px solid #e5e7eb;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
 
     opacity: 0;
     visibility: hidden;
@@ -189,6 +199,7 @@ nav > ul > li:hover .submenu {
     height: 430px;
 
     position: relative;
+    z-index: 1;
 
     display: flex;
     justify-content: center;
@@ -231,8 +242,6 @@ nav > ul > li:hover .submenu {
 }
 
 
-/* 배너 등장 애니메이션 */
-
 @keyframes bannerText {
 
     from {
@@ -253,13 +262,13 @@ nav > ul > li:hover .submenu {
 ========================================= */
 
 .shortcut {
-    width: 1200px;
+    width: min(1200px, 90%);
 
     margin: 60px auto;
 
     display: grid;
 
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
 
     gap: 20px;
 }
@@ -267,7 +276,7 @@ nav > ul > li:hover .submenu {
 .icon {
     height: 130px;
 
-    background-color: white;
+    background-color: #ffffff;
 
     border-radius: 12px;
 
@@ -307,23 +316,27 @@ nav > ul > li:hover .submenu {
 ========================================= */
 
 .board {
-    width: 1200px;
+    width: min(1200px, 90%);
 
     margin: 0 auto 70px;
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 25px;
 }
 
+
+/* 게시판 박스 */
+
 .box {
+    min-width: 0;
     min-height: 230px;
 
     padding: 30px;
 
-    background-color: white;
+    background-color: #ffffff;
 
     border-radius: 12px;
 
@@ -381,7 +394,7 @@ nav > ul > li:hover .submenu {
 }
 
 
-/* 프로필 / 문의 */
+/* 게시판 설명 */
 
 .box p {
     color: #666;
@@ -389,6 +402,66 @@ nav > ul > li:hover .submenu {
     font-size: 15px;
 
     margin-top: 10px;
+}
+
+
+/* =========================================
+   연락처
+========================================= */
+
+.contact-info {
+    margin-top: 15px;
+
+    line-height: 1.8;
+}
+
+.contact-info strong {
+    color: #222;
+}
+
+.contact-info span {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   온라인 문의 버튼
+========================================= */
+
+.consult-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 48px;
+
+    margin-top: 22px;
+
+    border: 1px solid #1d4f91;
+    border-radius: 6px;
+
+    background-color: #1d4f91;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.25s;
+}
+
+.consult-btn:hover {
+    background-color: #163d70;
+
+    border-color: #163d70;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(29, 79, 145, 0.2);
 }
 
 
@@ -411,7 +484,7 @@ footer {
 }
 
 footer > div {
-    width: 1200px;
+    width: min(1200px, 90%);
 
     margin: 0 auto;
 }
@@ -423,18 +496,12 @@ footer > div {
 
 @media (max-width: 1250px) {
 
-    .top,
-    .shortcut,
-    .board {
-        width: 90%;
-    }
-
     nav > ul > li {
         padding: 0 15px;
     }
 
     .shortcut {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
 }
@@ -485,7 +552,7 @@ footer > div {
     }
 
     .shortcut {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
         margin: 40px auto;
     }
@@ -497,27 +564,15 @@ footer > div {
     footer > div {
         width: 90%;
     }
+
 }
 
-.icon {
-    text-decoration: none;
-}
 
 /* =========================================
-   INDEX - 상단 메뉴 우선순위
+   HEADER 우선순위
 ========================================= */
-
-header {
-    position: relative;
-    z-index: 1000;
-}
 
 #header-container {
     position: relative;
     z-index: 1000;
-}
-
-.banner {
-    position: relative;
-    z-index: 1;
 }
