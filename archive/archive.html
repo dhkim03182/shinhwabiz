@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>자료실 | 신화비즈</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/company.css">
+
+    <style>
+
+        /* =========================================
+           자료실 페이지
+        ========================================= */
+
+        .archive-page {
+            width: 1200px;
+            margin: 0 auto 80px;
+            display: flex;
+            gap: 60px;
+        }
+
+
+        /* =========================================
+           왼쪽 메뉴
+        ========================================= */
+
+        .archive-side {
+            width: 220px;
+            flex-shrink: 0;
+        }
+
+        .archive-side h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #1d4f91;
+        }
+
+        .archive-side ul {
+            border-top: 1px solid #ddd;
+        }
+
+        .archive-side li {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .archive-side a {
+            display: block;
+            padding: 15px 18px;
+            font-size: 15px;
+            color: #555;
+            transition: 0.2s;
+        }
+
+        .archive-side a:hover,
+        .archive-side .active a {
+            background-color: #1d4f91;
+            color: white;
+        }
+
+
+        /* =========================================
+           오른쪽 게시판
+        ========================================= */
+
+        .archive-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+
+        .archive-title {
+            margin-bottom: 35px;
+        }
+
+        .archive-title h2 {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .archive-title span {
+            color: #1d4f91;
+            font-size: 14px;
+        }
+
+        .archive-title p {
+            margin-top: 15px;
+            color: #666;
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           게시판
+        ========================================= */
+
+        .archive-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-top: 2px solid #1d4f91;
+            background-color: white;
+        }
+
+        .archive-table th {
+            padding: 17px 10px;
+            background-color: #f5f7fa;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        .archive-table td {
+            padding: 17px 10px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .archive-table td.title {
+            text-align: left;
+        }
+
+        .archive-table td.title a:hover {
+            color: #1d4f91;
+        }
+
+
+        /* =========================================
+           페이지 번호
+        ========================================= */
+
+        .pagination {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .pagination a {
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid #ddd;
+            background-color: white;
+
+            font-size: 13px;
+            color: #555;
+        }
+
+        .pagination a:hover,
+        .pagination .active {
+            background-color: #1d4f91;
+            border-color: #1d4f91;
+            color: white;
+        }
+
+
+        /* =========================================
+           반응형
+        ========================================= */
+
+        @media (max-width: 1250px) {
+
+            .archive-page {
+                width: 90%;
+            }
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            .archive-page {
+                width: 90%;
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .archive-side {
+                width: 100%;
+            }
+
+            .archive-table th:nth-child(3),
+            .archive-table td:nth-child(3) {
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<div id="header-container"></div>
+
+
+
+<!-- =========================================
+     PAGE HEADER
+========================================= -->
+
+<section class="page-header">
+
+    <div class="page-header-inner">
+
+        <h1>
+            자료실
+        </h1>
+
+        <p>
+            신화비즈의 공지사항 및 자료를 확인하실 수 있습니다.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main class="archive-page">
+
+
+    <!-- =====================================
+         LEFT MENU
+    ====================================== -->
+
+    <aside class="archive-side">
+
+        <h2>
+            자료실
+        </h2>
+
+        <ul>
+
+            <li class="active">
+                <a href="archive.html">
+                    공지사항
+                </a>
+            </li>
+
+            <li>
+                <a href="forms.html">
+                    서식
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- =====================================
+         RIGHT CONTENT
+    ====================================== -->
+
+    <section class="archive-content">
+
+
+        <div class="archive-title">
+
+            <h2>
+                공지사항
+            </h2>
+
+            <span>
+                Notice
+            </span>
+
+            <p>
+                신화비즈의 새로운 소식과 공지사항을 확인하실 수 있습니다.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================
+             게시판
+        ================================== -->
+
+        <table class="archive-table">
+
+            <thead>
+
+                <tr>
+
+                    <th style="width: 80px;">
+                        번호
+                    </th>
+
+                    <th>
+                        제목
+                    </th>
+
+                    <th style="width: 120px;">
+                        작성일
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        2
+                    </td>
+
+                    <td class="title">
+                        <a href="notice.html">
+                            ISO 인증 관련 안내
+                        </a>
+                    </td>
+
+                    <td>
+                        2026.08.28
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        1
+                    </td>
+
+                    <td class="title">
+                        <a href="#">
+                            신화비즈 홈페이지 오픈 준비중입니다.
+                        </a>
+                    </td>
+
+                    <td>
+                        2026.08.28
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+
+        <!-- =================================
+             페이지 번호
+        ================================== -->
+
+        <div class="pagination">
+
+            <a href="#" class="active">
+                1
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <h3>
+            신화비즈
+        </h3>
+
+        <p>
+            대표 : 김성태
+        </p>
+
+        <p>
+            사업자번호 : 000-00-00000
+        </p>
+
+        <p>
+            전화 : 010-4135-9001
+        </p>
+
+        <p>
+            이메일 : example@example.com
+        </p>
+
+        <p>
+            주소 : 주소 입력
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="../js/header.js"></script>
+<script src="../js/menu.js"></script>
+
+
+</body>
+
+</html>
