@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    fetch("include/header.html")
+    fetch("/shinhwabiz/include/header.html")
         .then(response => {
 
             if (!response.ok) {
