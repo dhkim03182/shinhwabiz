@@ -1,0 +1,127 @@
+/* =========================================
+   경영혁신인증
+========================================= */
+
+
+/* =========================================
+   인증 소개
+========================================= */
+
+.innovation-intro {
+    margin-bottom: 45px;
+}
+
+
+.innovation-intro h3 {
+    margin-bottom: 15px;
+
+    font-size: 25px;
+
+    color: #1d4f91;
+}
+
+
+.innovation-intro p {
+    font-size: 15px;
+
+    line-height: 2;
+
+    color: #555;
+}
+
+
+
+/* =========================================
+   인증 내용
+========================================= */
+
+.innovation-section {
+    margin-bottom: 40px;
+}
+
+
+.innovation-section h3 {
+    margin-bottom: 15px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 2px solid #222;
+
+    font-size: 21px;
+}
+
+
+.innovation-content {
+    min-height: 180px;
+
+    padding: 30px;
+
+    border: 1px solid #e2e6eb;
+
+    background-color: #fafbfc;
+}
+
+
+.innovation-content p {
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+
+
+/* =========================================
+   상담
+========================================= */
+
+.innovation-contact {
+    padding: 30px;
+
+    margin-top: 30px;
+
+    background-color: #f5f7fa;
+
+    border-left: 4px solid #1d4f91;
+}
+
+
+.innovation-contact h3 {
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+
+.innovation-contact p {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #555;
+}
+
+
+.innovation-contact a {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background-color: #1d4f91;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.innovation-contact a:hover {
+    background-color: #153b6d;
+}
