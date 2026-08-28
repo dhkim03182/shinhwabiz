@@ -1,0 +1,246 @@
+/* =========================================
+   자료실 공통
+========================================= */
+
+.board-wrap {
+    width: 100%;
+}
+
+
+/* =========================================
+   게시판 안내
+========================================= */
+
+.board-top {
+    margin-bottom: 20px;
+}
+
+.board-top p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+}
+
+
+
+/* =========================================
+   게시판 테이블
+========================================= */
+
+.board-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    border-top: 2px solid #1d4f91;
+
+    table-layout: fixed;
+}
+
+
+/* 테이블 헤더 */
+
+.board-table thead th {
+    padding: 16px 10px;
+
+    background: #f7f9fb;
+
+    border-bottom: 1px solid #dfe3e8;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #333;
+
+    text-align: center;
+}
+
+
+/* 테이블 내용 */
+
+.board-table tbody td {
+    padding: 16px 10px;
+
+    border-bottom: 1px solid #e5e8ec;
+
+    font-size: 14px;
+
+    color: #666;
+
+    text-align: center;
+}
+
+
+/* 번호 */
+
+.board-table .num {
+    width: 80px;
+}
+
+
+/* 날짜 */
+
+.board-table .date {
+    width: 120px;
+}
+
+
+/* 제목 */
+
+.board-table .subject {
+    text-align: left;
+}
+
+.board-table .subject a {
+    color: #333;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.board-table .subject a:hover {
+    color: #1d4f91;
+}
+
+
+/* 행 hover */
+
+.board-table tbody tr {
+    transition: 0.2s;
+}
+
+.board-table tbody tr:hover {
+    background: #fafbfd;
+}
+
+
+
+/* =========================================
+   빈 게시판
+========================================= */
+
+.board-table .empty {
+    padding: 60px 10px;
+
+    color: #999;
+}
+
+
+
+/* =========================================
+   페이지 번호
+========================================= */
+
+.pagination {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-top: 30px;
+}
+
+
+.pagination a {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid #ddd;
+
+    color: #555;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+
+.pagination a:hover {
+    border-color: #1d4f91;
+
+    color: #1d4f91;
+}
+
+
+.pagination a.active {
+    background: #1d4f91;
+
+    border-color: #1d4f91;
+
+    color: #fff;
+}
+
+
+
+/* =========================================
+   서식 게시판
+========================================= */
+
+.forms-table .description {
+    width: 250px;
+}
+
+.forms-table .download {
+    width: 100px;
+}
+
+
+/* 다운로드 버튼 */
+
+.download-btn {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    background: #1d4f91;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    border-radius: 3px;
+
+    transition: 0.2s;
+}
+
+
+.download-btn:hover {
+    background: #163d70;
+}
+
+
+
+/* =========================================
+   모바일 대응
+========================================= */
+
+@media (max-width: 768px) {
+
+    .board-table {
+        min-width: 650px;
+    }
+
+
+    .board-wrap {
+        overflow-x: auto;
+    }
+
+
+    .forms-table {
+        min-width: 900px;
+    }
+
+}
