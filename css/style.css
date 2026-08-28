@@ -87,7 +87,7 @@ header {
 
 
 /* =========================================
-   PC NAVIGATION
+   NAVIGATION
 ========================================= */
 
 nav > ul {
@@ -122,7 +122,7 @@ nav > ul > li:hover {
 
 
 /* =========================================
-   PC 메뉴 아래 파란색 선
+   메뉴 아래 파란색 선
 ========================================= */
 
 nav > ul > li::after {
@@ -174,13 +174,13 @@ nav > ul > li:hover::after {
     transform: translate(-50%, 10px);
 
     transition:
-        opacity 0.2s ease,
-        visibility 0.2s ease,
-        transform 0.2s ease;
+        opacity 0.2s,
+        visibility 0.2s,
+        transform 0.2s;
 }
 
 
-/* PC에서 마우스를 올리면 표시 */
+/* PC에서 마우스를 올렸을 때 */
 
 nav > ul > li:hover > .submenu {
     opacity: 1;
@@ -200,8 +200,6 @@ nav > ul > li:hover > .submenu {
     padding: 14px 18px;
 
     font-size: 14px;
-    font-weight: 400;
-
     color: #555;
 
     transition: 0.2s;
@@ -209,7 +207,6 @@ nav > ul > li:hover > .submenu {
 
 .submenu li a:hover {
     background-color: #f1f5f9;
-
     color: #1d4f91;
 }
 
@@ -227,7 +224,6 @@ nav > ul > li:hover > .submenu {
     padding: 8px;
 
     border: 0;
-
     background: transparent;
 
     cursor: pointer;
@@ -303,7 +299,6 @@ nav > ul > li:hover > .submenu {
 
 .banner-text p {
     font-size: 20px;
-
     color: rgba(255, 255, 255, 0.9);
 
     word-break: keep-all;
@@ -506,7 +501,6 @@ nav > ul > li:hover > .submenu {
 
 .contact-info span {
     color: #666;
-
     font-size: 14px;
 }
 
@@ -577,7 +571,7 @@ footer > div {
 
 
 /* =========================================
-   태블릿
+   반응형 - 태블릿
 ========================================= */
 
 @media (max-width: 1250px) {
@@ -594,7 +588,7 @@ footer > div {
 
 
 /* =========================================
-   모바일
+   반응형 - 모바일
 ========================================= */
 
 @media (max-width: 768px) {
@@ -617,6 +611,9 @@ footer > div {
 
     header {
         height: auto;
+
+        position: relative;
+        z-index: 10000;
     }
 
     .top {
@@ -648,15 +645,18 @@ footer > div {
         display: flex;
 
         flex-shrink: 0;
+
+        position: relative;
+        z-index: 10002;
     }
 
 
-    /* 햄버거 → X */
+    /* =====================================
+       햄버거 → X
+    ====================================== */
 
     .mobile-menu-btn.active span:nth-child(1) {
-        transform:
-            translateY(7px)
-            rotate(45deg);
+        transform: translateY(7px) rotate(45deg);
     }
 
     .mobile-menu-btn.active span:nth-child(2) {
@@ -664,9 +664,7 @@ footer > div {
     }
 
     .mobile-menu-btn.active span:nth-child(3) {
-        transform:
-            translateY(-7px)
-            rotate(-45deg);
+        transform: translateY(-7px) rotate(-45deg);
     }
 
 
@@ -690,13 +688,21 @@ footer > div {
 
         box-shadow:
             0 8px 20px rgba(0, 0, 0, 0.10);
+
+        z-index: 10001;
     }
 
+
+    /* JS가 mobile-open을 붙였을 때 */
 
     nav.mobile-open {
-        display: block;
+        display: block !important;
     }
 
+
+    /* =====================================
+       MOBILE MAIN MENU LIST
+    ====================================== */
 
     nav > ul {
         width: 100%;
@@ -707,14 +713,10 @@ footer > div {
     }
 
 
-    /* =====================================
-       MOBILE MAIN MENU
-    ====================================== */
-
     nav > ul > li {
         width: 100%;
-        height: auto;
 
+        height: auto;
         min-height: 50px;
 
         padding: 0;
@@ -724,13 +726,15 @@ footer > div {
         border-bottom: 1px solid #edf0f3;
 
         font-size: 15px;
+
+        color: #333;
     }
 
 
-    /* PC 하단 파란 선 제거 */
+    /* PC용 파란색 선 제거 */
 
     nav > ul > li::after {
-        display: none;
+        display: none !important;
     }
 
 
@@ -740,6 +744,7 @@ footer > div {
 
     nav > ul > li > .main-menu-link {
         width: 100%;
+
         min-height: 50px;
 
         padding: 14px 18px;
@@ -747,6 +752,7 @@ footer > div {
         display: flex;
 
         align-items: center;
+
         justify-content: space-between;
 
         color: #333;
@@ -755,19 +761,23 @@ footer > div {
     }
 
 
+    nav > ul > li > .main-menu-link:hover {
+        color: #333;
+    }
+
+
     /* =====================================
-       + / - 버튼
+       + 버튼
     ====================================== */
 
     nav > ul > li > .main-menu-link::after {
         content: "＋";
 
-        flex-shrink: 0;
-
-        margin-left: 10px;
-
         font-size: 18px;
+
         font-weight: 400;
+
+        line-height: 1;
 
         color: #888;
 
@@ -775,7 +785,9 @@ footer > div {
     }
 
 
-    /* 열린 메뉴 */
+    /* =====================================
+       열린 메인 메뉴
+    ====================================== */
 
     nav > ul > li.submenu-open > .main-menu-link {
         color: #1d4f91;
@@ -793,27 +805,31 @@ footer > div {
 
     /* =====================================
        MOBILE SUB MENU
+       
+       ★ 핵심 수정 부분
     ====================================== */
 
-    /*
-       PC용 absolute / opacity / visibility를
-       모바일에서는 완전히 초기화
-    */
+    .submenu {
 
-    nav > ul > li > .submenu {
-
+        /* PC position 완전히 무효화 */
         position: static !important;
+
+        top: auto !important;
+        left: auto !important;
 
         width: 100% !important;
         max-width: none !important;
 
-        display: none !important;
+        /* 닫힌 상태 */
+        display: none;
 
+        /* PC 숨김 효과 완전히 제거 */
         opacity: 1 !important;
         visibility: visible !important;
 
         transform: none !important;
 
+        /* PC 테두리/그림자 제거 */
         border: 0 !important;
 
         box-shadow: none !important;
@@ -824,9 +840,9 @@ footer > div {
     }
 
 
-    /*
-       submenu-open 상태일 때 표시
-    */
+    /* =====================================
+       열린 상태
+    ====================================== */
 
     nav > ul > li.submenu-open > .submenu {
 
@@ -836,59 +852,94 @@ footer > div {
         visibility: visible !important;
 
         transform: none !important;
+
+        height: auto !important;
+
+        overflow: visible !important;
     }
 
 
     /* =====================================
-       SUB MENU ITEM
+       세부 메뉴
     ====================================== */
 
-    nav > ul > li > .submenu > li {
-
+    .submenu li {
         width: 100%;
 
-        display: block;
+        display: block !important;
+
+        height: auto;
     }
 
 
     /* =====================================
-       SUB MENU LINK
+       세부 메뉴 링크
     ====================================== */
 
-    nav > ul > li > .submenu > li > a {
+    .submenu li a {
+
+        display: flex !important;
 
         width: 100%;
+
         min-height: 44px;
 
         padding: 11px 18px 11px 32px;
 
-        display: flex;
-
         align-items: center;
 
         font-size: 14px;
+
         font-weight: 400;
 
-        color: #555;
+        line-height: 1.4;
+
+        color: #555 !important;
 
         background-color: #f8fafc;
 
         border-top: 1px solid #edf0f3;
 
-        transition:
-            background-color 0.2s ease,
-            color 0.2s ease;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
 
-    /* 서브메뉴 hover / 터치 */
+    /* 세부 메뉴 hover */
 
-    nav > ul > li > .submenu > li > a:hover {
-        padding-left: 32px;
+    .submenu li a:hover {
 
         background-color: #eef3f9;
 
-        color: #1d4f91;
+        color: #1d4f91 !important;
+
+        padding-left: 32px;
+    }
+
+
+    /* =====================================
+       혹시 PC hover 규칙이 덮어쓰는 것 방지
+    ====================================== */
+
+    nav > ul > li:hover > .submenu {
+
+        display: none;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: none !important;
+    }
+
+
+    nav > ul > li.submenu-open:hover > .submenu {
+
+        display: block !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: none !important;
     }
 
 
@@ -1054,18 +1105,18 @@ footer > div {
 
 
     /* =====================================
-       모바일 서브메뉴
+       세부 메뉴
     ====================================== */
 
-    nav > ul > li > .submenu > li > a {
-
+    .submenu li a {
         padding-left: 28px;
 
-        font-size: 14px;
+        min-height: 44px;
+
+        color: #555 !important;
     }
 
-    nav > ul > li > .submenu > li > a:hover {
-
+    .submenu li a:hover {
         padding-left: 28px;
     }
 
@@ -1121,5 +1172,6 @@ footer > div {
 
 #header-container {
     position: relative;
-    z-index: 1000;
+
+    z-index: 10000;
 }
