@@ -1,466 +1,270 @@
-<!DOCTYPE html>
-<html lang="ko">
+<header>
 
-<head>
+    <div class="top">
 
-    <meta charset="UTF-8">
+        <!-- =========================================
+             로고
+        ========================================== -->
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+        <a href="/shinhwabiz/index.html" class="logo">
 
-    <title>공지사항 | 신화비즈</title>
+            <img
+                src="/shinhwabiz/img/logo.png"
+                alt="신화비즈"
+            >
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/company.css">
+        </a>
 
-    <style>
 
-        /* =========================================
-           자료실 상세 페이지
-        ========================================= */
+        <!-- =========================================
+             메인 메뉴
+        ========================================== -->
 
-        .archive-page {
-            width: 1200px;
-            margin: 0 auto 80px;
+        <nav>
 
-            display: flex;
-            gap: 60px;
-        }
+            <ul>
 
 
-        /* =========================================
-           왼쪽 메뉴
-        ========================================= */
+                <!-- =====================================
+                     회사소개
+                ====================================== -->
 
-        .archive-side {
-            width: 220px;
-            flex-shrink: 0;
-        }
+                <li>
 
-        .archive-side h2 {
-            font-size: 22px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
+                    <a
+                        href="/shinhwabiz/company/company.html"
+                        class="main-menu-link"
+                    >
+                        회사소개
+                    </a>
 
-            border-bottom: 2px solid #1d4f91;
-        }
 
-        .archive-side ul {
-            border-top: 1px solid #ddd;
-        }
+                    <ul class="submenu">
 
-        .archive-side li {
-            border-bottom: 1px solid #ddd;
-        }
+                        <li>
+                            <a href="/shinhwabiz/company/greeting.html">
+                                인사말
+                            </a>
+                        </li>
 
-        .archive-side a {
-            display: block;
+                        <li>
+                            <a href="/shinhwabiz/company/company.html">
+                                회사소개
+                            </a>
+                        </li>
 
-            padding: 15px 18px;
+                        <li>
+                            <a href="/shinhwabiz/company/history.html">
+                                회사연혁
+                            </a>
+                        </li>
 
-            font-size: 15px;
-            color: #555;
+                        <li>
+                            <a href="/shinhwabiz/company/business.html">
+                                주요업무
+                            </a>
+                        </li>
 
-            transition: 0.2s;
-        }
+                        <li>
+                            <a href="/shinhwabiz/company/location.html">
+                                오시는 길
+                            </a>
+                        </li>
 
-        .archive-side a:hover,
-        .archive-side .active a {
-            background-color: #1d4f91;
-            color: white;
-        }
+                    </ul>
 
+                </li>
 
-        /* =========================================
-           오른쪽 내용
-        ========================================= */
 
-        .archive-content {
-            flex: 1;
-            min-width: 0;
-        }
 
+                <!-- =====================================
+                     시스템인증
+                ====================================== -->
 
-        .archive-title {
-            margin-bottom: 35px;
-        }
+                <li>
 
-        .archive-title h2 {
-            font-size: 30px;
-            margin-bottom: 5px;
-        }
+                    <a
+                        href="#"
+                        class="main-menu-link"
+                    >
+                        시스템인증
+                    </a>
 
-        .archive-title span {
-            color: #1d4f91;
-            font-size: 14px;
-        }
 
+                    <ul class="submenu">
 
-        /* =========================================
-           게시글
-        ========================================= */
+                        <li>
+                            <a href="#">
+                                ISO9001
+                            </a>
+                        </li>
 
-        .notice-view {
-            background-color: white;
+                        <li>
+                            <a href="#">
+                                ISO14001
+                            </a>
+                        </li>
 
-            border-top: 2px solid #1d4f91;
-            border-bottom: 1px solid #ddd;
-        }
+                        <li>
+                            <a href="#">
+                                ISO45001
+                            </a>
+                        </li>
 
+                        <li>
+                            <a href="#">
+                                ISO13485
+                            </a>
+                        </li>
 
-        .notice-head {
-            padding: 20px;
+                        <li>
+                            <a href="#">
+                                ISO22716
+                            </a>
+                        </li>
 
-            border-bottom: 1px solid #ddd;
-        }
+                    </ul>
 
-        .notice-head h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
+                </li>
 
-        .notice-date {
-            font-size: 13px;
-            color: #888;
-        }
 
 
-        .notice-body {
-            min-height: 300px;
+                <!-- =====================================
+                     경영혁신인증
+                ====================================== -->
 
-            padding: 40px 25px;
+                <li>
 
-            font-size: 15px;
-            line-height: 1.9;
+                    <a
+                        href="/shinhwabiz/management/mainbiz.html"
+                        class="main-menu-link"
+                    >
+                        경영혁신인증
+                    </a>
 
-            color: #555;
-        }
 
+                    <ul class="submenu">
 
-        /* =========================================
-           첨부파일
-        ========================================= */
+                        <li>
+                            <a href="/shinhwabiz/management/mainbiz.html">
+                                MAIN-BIZ
+                            </a>
+                        </li>
 
-        .notice-file {
-            padding: 18px 25px;
+                        <li>
+                            <a href="/shinhwabiz/management/innobiz.html">
+                                INNO-BIZ
+                            </a>
+                        </li>
 
-            background-color: #f8fafc;
+                        <li>
+                            <a href="/shinhwabiz/management/venture.html">
+                                Venture
+                            </a>
+                        </li>
 
-            border-top: 1px solid #e5e7eb;
+                        <li>
+                            <a href="/shinhwabiz/management/research.html">
+                                기업부설연구소
+                            </a>
+                        </li>
 
-            font-size: 14px;
-        }
+                    </ul>
 
-        .notice-file strong {
-            margin-right: 15px;
-            color: #333;
-        }
+                </li>
 
-        .notice-file a {
-            color: #1d4f91;
-        }
 
-        .notice-file a:hover {
-            text-decoration: underline;
-        }
 
+                <!-- =====================================
+                     제품인증
+                ====================================== -->
 
-        /* =========================================
-           버튼
-        ========================================= */
+                <li>
 
-        .notice-buttons {
-            margin-top: 30px;
+                    <a
+                        href="/shinhwabiz/product/kc.html"
+                        class="main-menu-link"
+                    >
+                        제품인증
+                    </a>
 
-            display: flex;
-            justify-content: center;
-        }
 
-        .notice-buttons a {
-            display: inline-block;
+                    <ul class="submenu">
 
-            padding: 12px 28px;
+                        <li>
+                            <a href="/shinhwabiz/product/kc.html">
+                                KC
+                            </a>
+                        </li>
 
-            background-color: #1d4f91;
-            color: white;
+                        <li>
+                            <a href="/shinhwabiz/product/ks.html">
+                                KS
+                            </a>
+                        </li>
 
-            font-size: 14px;
+                        <li>
+                            <a href="/shinhwabiz/product/cc.html">
+                                CC
+                            </a>
+                        </li>
 
-            transition: 0.2s;
-        }
+                        <li>
+                            <a href="/shinhwabiz/product/group-standard.html">
+                                단체표준
+                            </a>
+                        </li>
 
-        .notice-buttons a:hover {
-            background-color: #163d70;
-        }
+                        <li>
+                            <a href="/shinhwabiz/product/high-efficiency.html">
+                                고효율
+                            </a>
+                        </li>
 
+                    </ul>
 
-        /* =========================================
-           반응형
-        ========================================= */
+                </li>
 
-        @media (max-width: 1250px) {
 
-            .archive-page {
-                width: 90%;
-            }
 
-        }
+                <!-- =====================================
+                     자료실
+                     ※ 항상 가장 오른쪽
+                ====================================== -->
 
+                <li>
 
-        @media (max-width: 768px) {
+                    <a
+                        href="/shinhwabiz/archive/archive.html"
+                        class="main-menu-link"
+                    >
+                        자료실
+                    </a>
 
-            .archive-page {
-                width: 90%;
 
-                flex-direction: column;
+                    <ul class="submenu">
 
-                gap: 40px;
-            }
+                        <li>
+                            <a href="/shinhwabiz/archive/forms.html">
+                                서식
+                            </a>
+                        </li>
 
-            .archive-side {
-                width: 100%;
-            }
+                        <li>
+                            <a href="/shinhwabiz/archive/archive.html">
+                                공지
+                            </a>
+                        </li>
 
-        }
+                    </ul>
 
-    </style>
+                </li>
 
-</head>
 
+            </ul>
 
-<body>
-
-
-<!-- =========================================
-     HEADER
-========================================= -->
-
-<div id="header-container"></div>
-
-
-
-<!-- =========================================
-     PAGE HEADER
-========================================= -->
-
-<section class="page-header">
-
-    <div class="page-header-inner">
-
-        <h1>
-            자료실
-        </h1>
-
-        <p>
-            신화비즈의 공지사항 및 자료를 확인하실 수 있습니다.
-        </p>
+        </nav>
 
     </div>
 
-</section>
-
-
-
-<!-- =========================================
-     MAIN
-========================================= -->
-
-<main class="archive-page">
-
-
-    <!-- =====================================
-         LEFT MENU
-    ====================================== -->
-
-    <aside class="archive-side">
-
-        <h2>
-            자료실
-        </h2>
-
-        <ul>
-
-            <li class="active">
-
-                <a href="archive.html">
-                    공지사항
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="forms.html">
-                    서식
-                </a>
-
-            </li>
-
-        </ul>
-
-    </aside>
-
-
-
-    <!-- =====================================
-         RIGHT CONTENT
-    ====================================== -->
-
-    <section class="archive-content">
-
-
-        <div class="archive-title">
-
-            <h2>
-                공지사항
-            </h2>
-
-            <span>
-                Notice
-            </span>
-
-        </div>
-
-
-
-        <!-- =================================
-             게시글
-        ================================== -->
-
-        <div class="notice-view">
-
-
-            <!-- 제목 -->
-
-            <div class="notice-head">
-
-                <h3>
-                    ISO 인증 관련 안내
-                </h3>
-
-                <div class="notice-date">
-                    작성일 : 2026.08.28
-                </div>
-
-            </div>
-
-
-
-            <!-- 본문 -->
-
-            <div class="notice-body">
-
-                <p>
-                    신화비즈 홈페이지를 방문해주셔서 감사합니다.
-                </p>
-
-                <br>
-
-                <p>
-                    ISO 인증 관련 상담 및 문의사항이 있으신 경우
-                    신화비즈로 문의해주시기 바랍니다.
-                </p>
-
-                <br>
-
-                <p>
-                    앞으로 다양한 인증 관련 정보와
-                    안내사항을 지속적으로 업데이트할 예정입니다.
-                </p>
-
-                <br>
-
-                <p>
-                    감사합니다.
-                </p>
-
-            </div>
-
-
-
-            <!-- 첨부파일 -->
-
-            <div class="notice-file">
-
-                <strong>
-                    첨부파일
-                </strong>
-
-                <span>
-                    현재 첨부파일이 없습니다.
-                </span>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- 목록 버튼 -->
-
-        <div class="notice-buttons">
-
-            <a href="archive.html">
-                목록으로
-            </a>
-
-        </div>
-
-
-    </section>
-
-
-</main>
-
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer>
-
-    <div class="footer-inner">
-
-        <h3>
-            신화비즈
-        </h3>
-
-        <p>
-            대표 : 김성태
-        </p>
-
-        <p>
-            사업자번호 : 000-00-00000
-        </p>
-
-        <p>
-            전화 : 010-4135-9001
-        </p>
-
-        <p>
-            이메일 : example@example.com
-        </p>
-
-        <p>
-            주소 : 주소 입력
-        </p>
-
-    </div>
-
-</footer>
-
-
-
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
-
-<script src="../js/header.js"></script>
-<script src="../js/menu.js"></script>
-
-
-</body>
-
-</html>
+</header>
