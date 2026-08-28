@@ -7,10 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    const headerPath =
-        new URL("../include/header.html", document.currentScript.src);
-
-    fetch(headerPath)
+    fetch("include/header.html")
         .then(response => {
 
             if (!response.ok) {
